@@ -10,9 +10,9 @@ local highlight = {
 }
 
 local indent_options = {
-  -- indent = {
-  --   highlight = highlight,
-  -- },
+  indent = {
+    highlight = highlight,
+  },
   scope = {
     highlight = highlight,
     enabled = true ,

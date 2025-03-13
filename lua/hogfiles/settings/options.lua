@@ -6,6 +6,7 @@ local neovim_options = {
   cursorline = true, -- highlight the screen line of the cursor
   cursorlineopt = { "line", "number" }, -- settings for 'cursorline'
   showmode = false, -- message on status line to show current mode
+  showcmd = false, -- message on status line to show pressed keys
   laststatus = 3,  -- The value of this option influences when the last window will have a status line
   statusline = "", -- appearance of status line
   updatetime = 200, -- lowers latency for updates
