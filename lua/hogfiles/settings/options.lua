@@ -15,6 +15,7 @@ local neovim_options = {
   ruler = false, -- show cursor line and column in the status line
   list = true,  -- enable eol characters
   listchars = "trail:~",  -- identify trailing spaces and mark them with ~
+  signcolumn = 'yes', -- Allows for spacing indicating lsp actions, without moving the buffer window
 
   -- Text Wrap
   wrap = true, -- long lines wrap and continue on the next line

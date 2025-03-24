@@ -2,6 +2,8 @@ local map = vim.keymap.set
 
 -- Ease of life
 map("i", "jk", "<ESC>", { desc = "Normal Mode" })
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Moving between windows
 map("n", "<C-h>", "<C-w>h", { desc = "move left" })

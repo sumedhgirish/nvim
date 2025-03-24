@@ -5,6 +5,83 @@ return {
     lazy = true,
   },
   spec = {
+    -- LSP
+    {
+      "williamboman/mason.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = require("hogfiles.configs.mason"),
+      keys = require("hogfiles.keymaps.mason"),
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
+      lazy = false,
+      dependencies = {
+        "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+      },
+      opts = require("hogfiles.configs.mason_lspconfig"),
+      keys = require("hogfiles.keymaps.mason_lspconfig"),
+    },
+    {
+      "jay-babu/mason-null-ls.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      dependencies = {
+        "williamboman/mason.nvim",
+        "nvimtools/none-ls.nvim",
+      },
+      opts = require("hogfiles.configs.mason_null_ls"),
+      keys = require("hogfiles.keymaps.mason_null_ls"),
+    },
+    {
+      "jay-babu/mason-nvim-dap.nvim",
+      dependencies = {
+        "williamboman/mason.nvim",
+        "mfussenegger/nvim-dap",
+      },
+      opts = require("hogfiles.configs.mason_dap"),
+      keys = require("hogfiles.keymaps.mason_dap"),
+    },
+    {
+      "rcarriga/nvim-dap-ui",
+      dependencies = {
+        "mfussenegger/nvim-dap",
+        "nvim-neotest/nvim-nio",
+      },
+    },
+    {
+      'mrcjkb/rustaceanvim',
+      version = '^5', -- Recommended
+      lazy = false, -- This plugin is already lazy
+    },
+    {
+      "folke/lazydev.nvim",
+      ft = "lua",
+      opts = require("hogfiles.configs.lazydev"),
+    },
+    {
+      "zeioth/garbage-day.nvim",
+      dependencies = {
+        "neovim/nvim-lspconfig",
+      },
+      event = "VeryLazy",
+      opts = require("hogfiles.configs.garbageday"),
+    },
+    {
+      "ray-x/lsp_signature.nvim",
+      event = "InsertEnter",
+      opts = require("hogfiles.configs.lsp_signature"),
+    },
+    {
+      "stevearc/conform.nvim",
+      opts = require("hogfiles.configs.conform"),
+    },
+    {
+      "folke/trouble.nvim",
+      cmd = "Trouble",
+      opts = require("hogfiles.configs.trouble"),
+      keys = require("hogfiles.keymaps.trouble"),
+    },
     -- Catppuccin Theme
     {
       "catppuccin/nvim",
@@ -29,8 +106,8 @@ return {
       dependencies = { "echasnovski/mini.icons" },
       ---@module 'oil'
       ---@type oil.SetupOpts
-      lazy = false,
       opts = require("hogfiles.configs.oil"),
+      lazy = false,
     },
     -- Syntax highlighting
     {
@@ -51,6 +128,12 @@ return {
       "folke/twilight.nvim",
       keys = require("hogfiles.keymaps.twilight"),
       opts = require("hogfiles.configs.twilight"),
+    },
+    {
+      "folke/which-key.nvim",
+      event = "VeryLazy",
+      opts = require("hogfiles.configs.whichkey"),
+      keys = require("hogfiles.keymaps.whichkey"),
     },
     -- Auto-pairing
     {
@@ -90,7 +173,6 @@ return {
       opts = require("hogfiles.configs.indent_blankline"),
       event = "BufReadPost",
     },
-    -- TODO: Mini.nvim
     -- Movement
     {
       "DanilaMihailov/beacon.nvim",
@@ -124,6 +206,15 @@ return {
       },
       keys = require("hogfiles.keymaps.telescope"),
       opts = require("hogfiles.configs.telescope"),
+    },
+    -- Undo
+    {
+      "jiaoshijie/undotree",
+      dependencies = "nvim-lua/plenary.nvim",
+      config = true,
+      keys = { -- load the plugin only when using it's keybinding:
+        { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
+      },
     },
     -- Magic
     {
@@ -166,7 +257,13 @@ return {
       lazy = false,
       opts = require('hogfiles.configs.assistant'),
       keys = require('hogfiles.keymaps.assistant')
-    }
+    },
+    {
+      'folke/snacks.nvim',
+      lazy = false,
+      priority = 1000,
+      opts = require('hogfiles.configs.snacks'),
+    },
   },
   install = { colorscheme = { "catppuccin" } },
   checker = { enabled = true },

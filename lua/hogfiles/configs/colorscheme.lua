@@ -32,6 +32,8 @@ local catppuccin_options = {
   end,
   default_integrations = false,
   integrations = {
+    mason = true,
+    lsp_trouble = true,
     markdown = true,
     render_markdown = true,
     treesitter = true,
@@ -51,6 +53,10 @@ local catppuccin_options = {
     gitsigns = true,
     overseer = true,
     fidget = true,
+    which_key = true,
+    snacks = {
+      enabled = true,
+    }
   },
 }
 
