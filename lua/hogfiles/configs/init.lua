@@ -136,6 +136,7 @@ return {
       cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
       dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
       opts = require("hogfiles.configs.compiler-nvim"),
+      keys = require("hogfiles.keymaps.compiler-nvim")
     },
     {
       "stevearc/overseer.nvim",
@@ -158,6 +159,14 @@ return {
       opts = require('hogfiles.configs.render_markdown'),
       ft = { "markdown" }
     },
+    -- Competitive Programming
+    {
+      'A7lavinraj/assistant.nvim',
+      dependencies = { 'folke/snacks.nvim' },
+      lazy = false,
+      opts = require('hogfiles.configs.assistant'),
+      keys = require('hogfiles.keymaps.assistant')
+    }
   },
   install = { colorscheme = { "catppuccin" } },
   checker = { enabled = true },
