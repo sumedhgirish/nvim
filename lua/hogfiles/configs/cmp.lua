@@ -4,12 +4,29 @@ vim.opt.completeopt = { "menu", "menuone", "noselect", }
 vim.opt.shortmess:append("c")
 
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 local opts = {
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
+  },
+
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      maxwidth = 50,
+      elipsis_char = "...",
+    })
+  },
+
+  completion = {
+    completeopt = "menu,menuone,noselect",
+  },
+
+  performance = {
+    max_view_entries = 10,
   },
 
   window = {
