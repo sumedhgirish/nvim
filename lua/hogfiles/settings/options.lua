@@ -82,3 +82,4 @@ local neovim_globals = {
 for k,v in pairs(neovim_globals) do
   vim.g[k] = v
 end
+

@@ -90,6 +90,7 @@ local catppuccin_options = {
         background = true,
       },
     },
+    cmp = true,
     markdown = true,
     render_markdown = true,
     treesitter = true,

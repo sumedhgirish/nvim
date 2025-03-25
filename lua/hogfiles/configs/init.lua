@@ -82,6 +82,34 @@ return {
       opts = require("hogfiles.configs.trouble"),
       keys = require("hogfiles.keymaps.trouble"),
     },
+    {
+      "hrsh7th/nvim-cmp",
+      lazy = false,
+      priority = 100,
+      dependencies = {
+        "neovim/nvim-lspconfig",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
+        "L3MON4D3/LuaSnip",
+        "onsails/lspkind.nvim",
+      },
+      event = "InsertEnter",
+      config = function()
+        require("hogfiles.configs.cmp")
+      end,
+    },
+    {
+      "L3MON4D3/LuaSnip",
+      version = "v2.*",
+      build = "make install_jsregexp",
+      opts = require("hogfiles.configs.luasnip"),
+    },
+    {
+      "onsails/lspkind.nvim",
+      opts = require("hogfiles.configs.lspkind"),
+    },
     -- Catppuccin Theme
     {
       "catppuccin/nvim",
