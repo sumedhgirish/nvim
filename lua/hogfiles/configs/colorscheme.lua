@@ -27,13 +27,39 @@ local catppuccin_options = {
     return {
       NonText = { fg=colors.surface2 },
       MatchParen = { fg=colors.blue },
-      TreesitterContextLineNumber = { fg=colors.sapphire }
+      TreesitterContextLineNumber = { fg=colors.sapphire },
+      -- Lualine
+      LuaLineDiffAdd = { fg=colors.green },
+      LuaLineDiffChange = { fg=colors.blue },
+      LuaLineDiffDelete = { fg=colors.red }
     }
   end,
   default_integrations = false,
   integrations = {
     mason = true,
+    dap = true,
+    dap_ui = true,
     lsp_trouble = true,
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+        ok = { "italic" },
+      },
+      underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+        ok = { "underline" },
+      },
+      inlay_hints = {
+        background = true,
+      },
+    },
     markdown = true,
     render_markdown = true,
     treesitter = true,

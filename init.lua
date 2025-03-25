@@ -15,10 +15,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Import options.lua from settings
+-- Import settings
 require("hogfiles.settings.options")
-require("hogfiles.settings.keymaps")
 
 -- Set up lazy.nvim
 local lazy_options = require("hogfiles.configs")
 require("lazy").setup(lazy_options)
+
+require("hogfiles.settings.keymaps")
+require("hogfiles.settings.autocmds")
