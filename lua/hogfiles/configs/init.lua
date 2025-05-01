@@ -153,6 +153,10 @@ return {
       opts = require("hogfiles.configs.treesitter-context"),
     },
     {
+      "fladson/vim-kitty",
+      ft = "kitty",
+    },
+    {
       "folke/twilight.nvim",
       keys = require("hogfiles.keymaps.twilight"),
       opts = require("hogfiles.configs.twilight"),

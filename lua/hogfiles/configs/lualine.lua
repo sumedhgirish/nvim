@@ -6,7 +6,7 @@ local line_opts = {
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+    lualine_a = { { 'mode', separator = { left = ' ' }, right_padding = 6 } },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {
       {
@@ -45,7 +45,7 @@ local line_opts = {
     },
     lualine_y = { 'filetype', 'progress' },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location', separator = { right = ' ' }, left_padding = 6 },
     },
   },
   inactive_sections = {
@@ -66,6 +66,7 @@ local line_opts = {
   },
   extensions = {
     'lazy',
+    'mason'
   },
 }
 
