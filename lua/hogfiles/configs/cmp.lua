@@ -5,11 +5,12 @@ vim.opt.shortmess:append("c")
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 
 local opts = {
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
 
@@ -39,6 +40,7 @@ local opts = {
     { name = "buffer" },
     { name = "path" },
     { name = "cmdline" },
+    { name = "luasnip" },
   },
 
   mapping = {
@@ -52,8 +54,52 @@ local opts = {
         }
       ),
       { "i", "c" }
-    )
+    ),
+    ["<Tab>"] = cmp.mapping(
+      function(fallback)
+        if luasnip.jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end,
+      { "i", "s" }
+    ),
+    ["<S-Tab>"] = cmp.mapping(
+      function(fallback)
+        if luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end,
+      { "i", "s" }
+    ),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-e>"] = cmp.mapping.close(),
+  },
+
+  experimental = {
+    ghost_text = true,
   }
 }
 
 cmp.setup(opts)
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+

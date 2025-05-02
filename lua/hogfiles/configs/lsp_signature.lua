@@ -4,7 +4,8 @@ local opts = {
   handler_opts = {
     border = "rounded",
   },
-  transparency=100,
+  transparency = 100,
+  hint_enable = false,
 }
 
 return opts

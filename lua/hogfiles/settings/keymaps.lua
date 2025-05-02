@@ -10,6 +10,7 @@ map("n", "<C-h>", "<C-w>h", { desc = "move left" })
 map("n", "<C-l>", "<C-w>l", { desc = "move right" })
 map("n", "<C-j>", "<C-w>j", { desc = "move down" })
 map("n", "<C-k>", "<C-w>k", { desc = "move up" })
- 
+
 -- Directory listing
 map("n", ".", "<cmd>lua require('oil').toggle_float()<CR>", { noremap = true, silent = true })
+

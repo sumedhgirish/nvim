@@ -61,7 +61,7 @@ local catppuccin_options = {
       -- Lualine
       LuaLineDiffAdd = { fg=colors.green },
       LuaLineDiffChange = { fg=colors.blue },
-      LuaLineDiffDelete = { fg=colors.red }
+      LuaLineDiffDelete = { fg=colors.red },
     }
   end,
   default_integrations = false,
@@ -104,7 +104,7 @@ local catppuccin_options = {
     indent_blankline = {
       enabled = true,
       colored_indent_levels = true,
-      scope_color = "lavender",
+      scope_color = "rosewater",
     },
     nvim_surround = true,
     gitsigns = true,
