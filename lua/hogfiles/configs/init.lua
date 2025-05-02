@@ -8,14 +8,14 @@ return {
     -- LSP
     {
       "williamboman/mason.nvim",
-      lazy = false,
+      event = { "BufReadPre", "BufNewFile" },
       priority = 1000,
       opts = require("hogfiles.configs.mason"),
       keys = require("hogfiles.keymaps.mason"),
     },
     {
       "williamboman/mason-lspconfig.nvim",
-      lazy = false,
+      event = { "BufReadPre", "BufNewFile" },
       dependencies = {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
@@ -35,6 +35,7 @@ return {
     },
     {
       "jay-babu/mason-nvim-dap.nvim",
+      event = { "BufReadPre", "BufNewFile" },
       dependencies = {
         "williamboman/mason.nvim",
         "mfussenegger/nvim-dap",
@@ -44,6 +45,7 @@ return {
     },
     {
       "rcarriga/nvim-dap-ui",
+      event = { "BufReadPre", "BufNewFile" },
       dependencies = {
         "mfussenegger/nvim-dap",
         "nvim-neotest/nvim-nio",
@@ -84,7 +86,6 @@ return {
     },
     {
       "hrsh7th/nvim-cmp",
-      lazy = false,
       priority = 100,
       dependencies = {
         "neovim/nvim-lspconfig",
@@ -95,7 +96,7 @@ return {
         "L3MON4D3/LuaSnip",
         "onsails/lspkind.nvim",
       },
-      event = "InsertEnter",
+      event = { "InsertEnter" },
       config = function()
         require("hogfiles.configs.cmp")
       end,
@@ -114,7 +115,6 @@ return {
     {
       "catppuccin/nvim",
       name = "catppuccin",
-      lazy = false,
       priority = 1000,
       config = function()
         require("catppuccin").setup(
@@ -126,7 +126,7 @@ return {
     {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
-      lazy = false,
+      event = { "UIEnter" },
       opts = require("hogfiles.configs.lualine"),
     },
     {
@@ -155,11 +155,6 @@ return {
     {
       "fladson/vim-kitty",
       ft = "kitty",
-    },
-    {
-      "folke/twilight.nvim",
-      keys = require("hogfiles.keymaps.twilight"),
-      opts = require("hogfiles.configs.twilight"),
     },
     {
       "folke/which-key.nvim",
@@ -268,7 +263,7 @@ return {
     },
     {
       "j-hui/fidget.nvim",
-      event = "VeryLazy",
+      event = { "UIEnter" },
       opts = require("hogfiles.configs.fidget")
     },
     {
@@ -286,7 +281,6 @@ return {
     {
       'A7lavinraj/assistant.nvim',
       dependencies = { 'folke/snacks.nvim' },
-      lazy = false,
       opts = require('hogfiles.configs.assistant'),
       keys = require('hogfiles.keymaps.assistant')
     },
