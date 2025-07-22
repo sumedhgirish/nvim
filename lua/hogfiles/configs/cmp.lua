@@ -24,6 +24,7 @@ local opts = {
 
   completion = {
     completeopt = "menu,menuone,noselect",
+    keyword_length = 3,
   },
 
   performance = {

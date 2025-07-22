@@ -14,3 +14,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "move up" })
 -- Directory listing
 map("n", ".", "<cmd>lua require('oil').toggle_float()<CR>", { noremap = true, silent = true })
 
+-- Menus
+map("n", "ml","<cmd>Lazy<CR>", { noremap = true, silent = true, desc = "Lazy" })
+map("n", "mm", "<cmd>Mason<CR>", { noremap = true, silent = true, desc = "Mason" })
