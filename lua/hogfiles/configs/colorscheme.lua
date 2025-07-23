@@ -68,9 +68,9 @@ local catppuccin_options = {
             DiagnosticSignInfo = { fg=colors.sapphire },
             DiagnosticSignHint = { fg=colors.green },
             -- Telescope
-            TelescopeMatching = { fg=colors.yellow },
-            TelescopeSelection = { fg=colors.lavender, style={ "bold" } },
-            TelescopeSelectionCaret = { fg=colors.yellow },
+            TelescopeMatching = { fg=colors.yellow, style={ "bold" } },
+            TelescopeSelection = { fg=colors.red },
+            TelescopeSelectionCaret = { fg=colors.red },
         }
     end,
     default_integrations = false,
