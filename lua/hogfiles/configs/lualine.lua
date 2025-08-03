@@ -37,10 +37,10 @@ local line_opts = {
                 sources = { 'nvim_lsp' },
                 sections = { 'error', 'warn', 'info', 'hint' },
                 diagnostics_color = {
-                    error = 'DiagnosticError',
-                    warn  = 'DiagnosticWarn',
-                    info  = 'DiagnosticInfo',
-                    hint  = 'DiagnosticHint',
+                    error = 'DiagnosticSignError',
+                    warn  = 'DiagnosticSignWarn',
+                    info  = 'DiagnosticSignInfo',
+                    hint  = 'DiagnosticSignHint',
                 },
                 symbols = {
                     error = ' ',
@@ -55,7 +55,7 @@ local line_opts = {
         },
         lualine_y = { 'filetype', 'progress' },
         lualine_z = {
-            { 'location', separator = { right = ' ' }, left_padding = 6 },
+            { 'datetime', separator = { right = ' ' }, left_padding = 6 },
         },
     },
     inactive_sections = {
@@ -75,8 +75,10 @@ local line_opts = {
         lualine_z = {},
     },
     extensions = {
-        'lazy',
-        'mason'
+        -- 'lazy',
+        { filetypes = { 'lazy', 'TelescopePrompt' }, sections = { lualine_a = { { 'filetype', icon = { align = 'right' } } } } },
+        'mason',
+        'oil',
     },
 }
 
