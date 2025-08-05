@@ -10,6 +10,7 @@ local opts = {
 		mode = "virtualtext",
 		virtualtext = " ",
 		virtualtext_inline = "before",
+		always_update = true,
 	},
 }
 

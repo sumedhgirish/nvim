@@ -114,6 +114,11 @@ return {
 			"onsails/lspkind.nvim",
 			opts = require("hogfiles.configs.lspkind"),
 		},
+		{
+			"windwp/nvim-ts-autotag",
+			opts = require("hogfiles.configs.autotag"),
+			ft = { "html" },
+		},
 		-- Catppuccin Theme
 		{
 			"catppuccin/nvim",
@@ -143,10 +148,8 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
 			lazy = false,
-			config = function()
-				local configs = require("nvim-treesitter.configs")
-				configs.setup(require("hogfiles.configs.treesitter"))
-			end,
+			branch = "master",
+			opts = require("hogfiles.configs.treesitter"),
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-context",
@@ -166,7 +169,7 @@ return {
 		{
 			"catgoose/nvim-colorizer.lua",
 			event = "BufReadPre",
-			opts = require("hogfiles.configs.nvim-colorizer"),
+			opts = require("hogfiles.configs.colorizer"),
 		},
 		-- Auto-pairing
 		{
