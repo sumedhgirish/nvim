@@ -4,7 +4,7 @@
 -- ----------------------------------------
 
 -- Theme
-vim.g.default_colorscheme = "eldritch"
+vim.g.default_colorscheme = "eldritch-dark"
 
 -- Options --------------------------------------------------------------------
 vim.opt.breakindent = true -- Wrap indent to match  line start.
@@ -28,8 +28,8 @@ vim.opt.linebreak = true -- Wrap lines at 'breakat'.
 vim.opt.number = true -- Show numberline.
 vim.opt.preserveindent = true -- Preserve indent structure as much as possible.
 vim.opt.pumheight = 10 -- Height of the pop up menu.
-vim.opt.relativenumber = false -- Show relative numberline.
-vim.opt.shiftwidth = 2 -- Number of space inserted for indentation.
+vim.opt.relativenumber = true -- Show relative numberline.
+vim.opt.shiftwidth = 4 -- Number of space inserted for indentation.
 vim.opt.showmode = false -- Disable showing modes in command line.
 vim.opt.showtabline = 2 -- always display tabline.
 vim.opt.signcolumn = "yes" -- Always show the sign column.
@@ -37,7 +37,7 @@ vim.opt.smartcase = true -- Case sensitivie searching.
 vim.opt.smartindent = false -- Smarter autoindentation.
 vim.opt.splitbelow = true -- Splitting a new window below the current one.
 vim.opt.splitright = true -- Splitting a new window at the right of the current one.
-vim.opt.tabstop = 2 -- Number of space in a tab.
+vim.opt.tabstop = 4 -- Number of space in a tab.
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI.
 vim.opt.undofile = true -- Enable persistent undo between session and reboots.
@@ -71,9 +71,9 @@ vim.g.big_file = { size = 1024 * 5000, lines = 50000 } -- For files bigger than 
 
 -- The next globals are toggleable with <space + l + u>
 vim.g.autoformat_enabled = false -- Enable auto formatting at start.
-vim.g.autopairs_enabled = false -- Enable autopairs at start.
+vim.g.autopairs_enabled = true -- Enable autopairs at start.
 vim.g.cmp_enabled = true -- Enable completion at start.
-vim.g.codeactions_enabled = true -- Enable displaying 💡 where code actions can be used.
+vim.g.codeactions_enabled = true -- Enable displaying  where code actions can be used.
 vim.g.codelens_enabled = true -- Enable automatic codelens refresh for lsp.
 vim.g.diagnostics_mode = 3 -- Set code linting (0=off, 1=only show in status line, 2=virtual text off, 3=all on).
 vim.g.fallback_icons_enabled = false -- Enable it if you need to use Neovim in a machine without nerd fonts.
