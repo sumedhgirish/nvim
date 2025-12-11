@@ -242,8 +242,11 @@ return {
       if is_android then fps = 30 else fps = 244 end
 
       return {
-        timeout = 2500,
+        timeout = 1500,
         fps = fps,
+        render = "compact",
+        top_down = false,
+        stages = "fade",
         max_height = function() return math.floor(vim.o.lines * 0.75) end,
         max_width = function() return math.floor(vim.o.columns * 0.75) end,
         on_open = function(win)
