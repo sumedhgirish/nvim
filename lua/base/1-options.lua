@@ -61,6 +61,9 @@ vim.opt.shortmess:append { s = true, I = true } -- Disable startup message.
 vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert.
 vim.opt.diffopt:append { "algorithm:histogram", "linematch:60" } -- Enable linematch diff algorithm
 
+vim.opt.shell = '/usr/bin/fish'
+vim.opt.messagesopt = 'wait:0,history:50'
+
 local is_android = vim.fn.isdirectory('/data') == 1
 if is_android then vim.opt.mouse = "v" else vim.opt.mouse = "a" end -- Enable scroll for android
 
@@ -70,16 +73,27 @@ vim.g.maplocalleader = "," -- Set default local leader key.
 vim.g.big_file = { size = 1024 * 5000, lines = 50000 } -- For files bigger than this, disable 'treesitter' (+5Mb).
 
 -- The next globals are toggleable with <space + l + u>
-vim.g.autoformat_enabled = false -- Enable auto formatting at start.
+vim.g.autoformat_enabled = true -- Enable auto formatting at start.
 vim.g.autopairs_enabled = true -- Enable autopairs at start.
 vim.g.cmp_enabled = true -- Enable completion at start.
 vim.g.codeactions_enabled = true -- Enable displaying  where code actions can be used.
 vim.g.codelens_enabled = true -- Enable automatic codelens refresh for lsp.
 vim.g.diagnostics_mode = 3 -- Set code linting (0=off, 1=only show in status line, 2=virtual text off, 3=all on).
 vim.g.fallback_icons_enabled = false -- Enable it if you need to use Neovim in a machine without nerd fonts.
-vim.g.inlay_hints_enabled = false -- Enable always show function parameter names.
+vim.g.inlay_hints_enabled = true -- Enable always show function parameter names.
 vim.g.lsp_round_borders_enabled = true -- Enable round borders for lsp hover and signatureHelp.
 vim.g.lsp_signature_enabled = true -- Enable automatically showing lsp help as you write function parameters.
 vim.g.notifications_enabled = true -- Enable notifications.
 vim.g.url_hl_enabled = true -- Highlight URLs with an underline effect.
 
+if vim.g.neovide then
+  vim.g.neovide_refresh_rate = 165
+  vim.g.neovide_refresh_rate_idle = 5
+
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  vim.g.neovide_cursor_vfx_particle_lifetime = 1.0
+  vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.4
+  vim.g.neovide_cursor_vfx_particle_density = 1.4
+
+  vim.g.neovide_hide_mouse_when_typing = true
+end

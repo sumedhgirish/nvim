@@ -101,6 +101,8 @@ local function setup_lazy(lazy_dir)
     rocks = { enabled = vim.fn.executable("luarocks") == 1 },
     -- We don't use this, so create it in a disposable place.
     lockfile = vim.fn.stdpath("cache") .. "/lazy-lock.json",
+    -- rounded borders
+    ui = { border = "rounded" },
   })
 end
 

@@ -295,6 +295,7 @@ return {
           package_uninstalled = require("base.utils").get_icon("MasonUninstalled"),
           package_pending = require("base.utils").get_icon("MasonPending"),
         },
+        border = "rounded",
       },
     }
   },
