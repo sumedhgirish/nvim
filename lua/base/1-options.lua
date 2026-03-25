@@ -4,7 +4,7 @@
 -- ----------------------------------------
 
 -- Theme
-vim.g.default_colorscheme = "eldritch-dark"
+vim.g.default_colorscheme = "eldritch"
 
 -- Options --------------------------------------------------------------------
 vim.opt.breakindent = true -- Wrap indent to match  line start.
@@ -56,16 +56,19 @@ vim.opt.scrolloff = 1000 -- Number of lines to leave before/after the cursor whe
 vim.opt.sidescrolloff = 8 -- Same but for side scrolling.
 vim.opt.selection = "old" -- Don't select the newline symbol when using <End> on visual mode.
 
-vim.opt.viewoptions:remove "curdir" -- Disable saving current directory with views.
-vim.opt.shortmess:append { s = true, I = true } -- Disable startup message.
-vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert.
-vim.opt.diffopt:append { "algorithm:histogram", "linematch:60" } -- Enable linematch diff algorithm
+vim.opt.viewoptions:remove("curdir") -- Disable saving current directory with views.
+vim.opt.shortmess:append({ s = true, I = true }) -- Disable startup message.
+vim.opt.backspace:append({ "nostop" }) -- Don't stop backspace at insert.
+vim.opt.diffopt:append({ "algorithm:histogram", "linematch:60" }) -- Enable linematch diff algorithm
 
-vim.opt.shell = '/usr/bin/fish'
-vim.opt.messagesopt = 'wait:0,history:50'
+vim.opt.messagesopt = "wait:0,history:50"
 
-local is_android = vim.fn.isdirectory('/data') == 1
-if is_android then vim.opt.mouse = "v" else vim.opt.mouse = "a" end -- Enable scroll for android
+local is_android = vim.fn.isdirectory("/data") == 1
+if is_android then
+  vim.opt.mouse = "v"
+else
+  vim.opt.mouse = "a"
+end -- Enable scroll for android
 
 -- Globals --------------------------------------------------------------------
 vim.g.mapleader = " " -- Set leader key.
@@ -80,7 +83,7 @@ vim.g.codeactions_enabled = true -- Enable displaying  where code actions can
 vim.g.codelens_enabled = true -- Enable automatic codelens refresh for lsp.
 vim.g.diagnostics_mode = 3 -- Set code linting (0=off, 1=only show in status line, 2=virtual text off, 3=all on).
 vim.g.fallback_icons_enabled = false -- Enable it if you need to use Neovim in a machine without nerd fonts.
-vim.g.inlay_hints_enabled = true -- Enable always show function parameter names.
+vim.g.inlay_hints_enabled = false -- Enable always show function parameter names.
 vim.g.lsp_round_borders_enabled = true -- Enable round borders for lsp hover and signatureHelp.
 vim.g.lsp_signature_enabled = true -- Enable automatically showing lsp help as you write function parameters.
 vim.g.notifications_enabled = true -- Enable notifications.
