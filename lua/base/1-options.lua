@@ -1,10 +1,5 @@
--- HELLO, welcome to NormalNvim!
--- ----------------------------------------
--- Here you can define your nvim variables.
--- ----------------------------------------
-
 -- Theme
-vim.g.default_colorscheme = "eldritch"
+vim.g.default_colorscheme = "astrodark"
 
 -- Options --------------------------------------------------------------------
 vim.opt.breakindent = true -- Wrap indent to match  line start.
@@ -47,12 +42,12 @@ vim.opt.writebackup = false -- Disable making a backup before overwriting a file
 vim.opt.shada = "!,'1000,<50,s10,h" -- Remember the last 1000 opened files
 vim.opt.history = 1000 -- Number of commands to remember in a history table (per buffer).
 vim.opt.swapfile = false -- Ask what state to recover when opening a file that was not saved.
-vim.opt.wrap = true -- Disable wrapping of lines longer than the width of window.
+vim.opt.wrap = false -- Disable wrapping of lines longer than the width of window.
 vim.opt.colorcolumn = "80" -- PEP8 like character limit vertical bar.
 vim.opt.mousescroll = "ver:1,hor:0" -- Disables hozirontal scroll in neovim.
 vim.opt.guicursor = "n:blinkon200,i-ci-ve:ver25" -- Enable cursor blink.
 vim.opt.autochdir = true -- Use current file dir as working dir (See project.nvim).
-vim.opt.scrolloff = 1000 -- Number of lines to leave before/after the cursor when scrolling. Setting a high value keep the cursor centered.
+vim.opt.scrolloff = 4 -- Number of lines to leave before/after the cursor when scrolling. Setting a high value keep the cursor centered.
 vim.opt.sidescrolloff = 8 -- Same but for side scrolling.
 vim.opt.selection = "old" -- Don't select the newline symbol when using <End> on visual mode.
 
@@ -83,15 +78,21 @@ vim.g.codeactions_enabled = true -- Enable displaying  where code actions can
 vim.g.codelens_enabled = true -- Enable automatic codelens refresh for lsp.
 vim.g.diagnostics_mode = 3 -- Set code linting (0=off, 1=only show in status line, 2=virtual text off, 3=all on).
 vim.g.fallback_icons_enabled = false -- Enable it if you need to use Neovim in a machine without nerd fonts.
-vim.g.inlay_hints_enabled = false -- Enable always show function parameter names.
+vim.g.inlay_hints_enabled = true -- Enable always show function parameter names.
 vim.g.lsp_round_borders_enabled = true -- Enable round borders for lsp hover and signatureHelp.
 vim.g.lsp_signature_enabled = true -- Enable automatically showing lsp help as you write function parameters.
 vim.g.notifications_enabled = true -- Enable notifications.
 vim.g.url_hl_enabled = true -- Highlight URLs with an underline effect.
 
+-- Copilot
+vim.g.copilot_settings = {
+  copilot_model = "gpt-5.1-codex",
+}
+
 if vim.g.neovide then
-  vim.g.neovide_refresh_rate = 165
+  vim.g.neovide_refresh_rate = 120
   vim.g.neovide_refresh_rate_idle = 5
+  vim.g.neovide_scroll_animation_length = 0
 
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.0
@@ -99,4 +100,5 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_particle_density = 1.4
 
   vim.g.neovide_hide_mouse_when_typing = true
+  vim.opt.smoothscroll = true
 end

@@ -39,19 +39,19 @@ return {
   LSP = "",
 
   -- Heirline-components - tabline
-  BufferClose = "󰅖",
+  BufferClose = " ",
   FileModified = "",
   FileReadOnly = "",
   ArrowLeft = "",
   ArrowRight = "",
-  TabClose = "󰅙",
+  TabClose = " ",
 
   -- Heirline-components - winbar
   CompilerPlay = "",
   CompilerStop = "",
   CompilerRedo = "",
   NeoTree = "",
-  Aerial = "" ,
+  Aerial = "",
   ZenMode = "󰰶",
   BufWrite = "",
   BufWriteAll = "",
@@ -67,9 +67,9 @@ return {
   ActiveLSP = "",
   ActiveTS = "",
   Environment = "",
-  DiagnosticError = "",
+  DiagnosticError = "",
   DiagnosticHint = "󰌵",
-  DiagnosticInfo = "󰋼",
+  DiagnosticInfo = "",
   DiagnosticWarn = "",
   LSPLoading1 = "",
   LSPLoading2 = "󰀚",
@@ -129,5 +129,5 @@ return {
   MasonPending = "⟳",
 
   -- Render-markdown
-  RenderMarkdown = { ' ', ' ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' }
+  RenderMarkdown = { " ", " ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
 }
