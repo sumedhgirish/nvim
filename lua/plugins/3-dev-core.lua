@@ -304,6 +304,7 @@ return {
           local bufnr = args.buf
           if client and client.name then
             utils.apply_user_lsp_mappings(client.name, bufnr)
+            client.server_capabilities.semanticTokensProvider = nil
           end
         end,
       })
